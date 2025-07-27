@@ -73,7 +73,7 @@ nav {
 
 .get-app-btn:hover {
     background: white;
-    color: #667eea;
+    color: #1c4ba9;
     transform: translateY(-2px);
 }
 
@@ -158,7 +158,7 @@ main {
 
 /* Hero Section */
 .hero {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #9ae2ff 0%, #1c4ba9 100%);
     color: white;
     padding: 100px 0;
     text-align: center;
@@ -196,19 +196,24 @@ main {
     margin: 2rem 0;
     opacity: 0;
     animation: fadeInUp 1s ease 0.4s forwards;
+    overflow: visible;
+    position: relative;
 }
 
 .frontpage-img {
-    width: 100%;
-    max-width: 700px;
+    width: 120%;
+    max-width: 850px;
     height: auto;
     border-radius: 15px;
     box-shadow: 0 20px 40px rgba(0,0,0,0.2);
     transition: transform 0.3s ease;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 .frontpage-img:hover {
-    transform: translateY(-5px);
+    transform: translateX(-50%) translateY(-5px);
 }
 
 .hero p {
@@ -246,7 +251,7 @@ main {
 
 .cta-button.primary:hover {
     background: white;
-    color: #667eea;
+    color: #1c4ba9;
     transform: translateY(-3px);
     box-shadow: 0 10px 25px rgba(0,0,0,0.2);
 }
@@ -282,7 +287,7 @@ section {
     transform: translateX(-50%);
     width: 60px;
     height: 4px;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #9ae2ff 0%, #1c4ba9 100%);
     border-radius: 2px;
 }
 
@@ -363,12 +368,56 @@ section {
     gap: 2.5rem;
 }
 
+.feature-item {
+    cursor: pointer;
+    padding: 1.5rem;
+    border-radius: 15px;
+    transition: all 0.3s ease;
+    position: relative;
+    background: linear-gradient(135deg, rgba(154, 226, 255, 0.1) 0%, rgba(28, 75, 169, 0.1) 100%);
+    border: 2px solid transparent;
+}
+
+.feature-item:hover {
+    background: linear-gradient(135deg, rgba(154, 226, 255, 0.2) 0%, rgba(28, 75, 169, 0.2) 100%);
+    border: 2px solid rgba(28, 75, 169, 0.3);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(28, 75, 169, 0.15);
+}
+
 .feature-item h3 {
     color: #333;
     font-size: 1.4rem;
     font-weight: bold;
     margin-bottom: 1rem;
     line-height: 1.4;
+    position: relative;
+}
+
+.feature-item h3::before {
+    content: '';
+    position: absolute;
+    left: -1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 4px;
+    height: 0;
+    background: linear-gradient(135deg, #9ae2ff 0%, #1c4ba9 100%);
+    border-radius: 2px;
+    transition: height 0.3s ease;
+}
+
+.feature-item:hover h3::before {
+    height: 100%;
+}
+
+.feature-name {
+    background: linear-gradient(135deg, #9ae2ff 0%, #1c4ba9 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: 900;
+    text-shadow: 0 2px 4px rgba(28, 75, 169, 0.2);
 }
 
 .feature-item p {
@@ -379,6 +428,7 @@ section {
 
 .features-image {
     text-align: center;
+    position: relative;
 }
 
 .phone-mockup {
@@ -387,7 +437,7 @@ section {
     height: auto;
     border-radius: 20px;
     box-shadow: 0 20px 40px rgba(0,0,0,0.15);
-    transition: transform 0.3s ease;
+    transition: all 0.3s ease;
 }
 
 .phone-mockup:hover {
@@ -553,7 +603,7 @@ footer p {
 }
 
 .social-links a:hover {
-    background: #667eea;
+    background: #1c4ba9;
     transform: translateY(-3px);
 }
 
@@ -593,6 +643,17 @@ footer p {
 
     .hero h1 {
         font-size: 2.5rem;
+    }
+
+    .frontpage-img {
+        width: 100%;
+        max-width: 100%;
+        transform: none;
+        left: auto;
+    }
+
+    .frontpage-img:hover {
+        transform: translateY(-5px);
     }
 
     .about-content {
@@ -652,3 +713,4 @@ footer p {
         max-width: 280px;
         max-height: 600px;
     }
+}
