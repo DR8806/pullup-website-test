@@ -39,17 +39,11 @@ nav {
     text-decoration: none;
     color: white;
     transition: transform 0.3s ease;
-    display: flex;
-    align-items: center;
+    letter-spacing: 2px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-.logo-img {
-    height: 40px;
-    width: auto;
-    transition: transform 0.3s ease;
-}
-
-.logo:hover .logo-img {
+.logo:hover {
     transform: scale(1.05);
 }
 
