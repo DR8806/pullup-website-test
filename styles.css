@@ -8,6 +8,9 @@
 .fade-in.visible {
     opacity: 1;
     transform: translateY(0);
+}    .cards-grid {
+        grid-template-columns: 1fr;
+    }
 }* {
     margin: 0;
     padding: 0;
@@ -391,69 +394,134 @@ section {
     transform: translateY(-10px);
 }
 
-/* Contact Section */
-.contact {
-    background: #333;
-    color: white;
-    border-radius: 20px;
-    margin: 2rem 0;
-}
-
-.contact-form {
-    max-width: 600px;
+/* Demo Section */
+.demo-section {
+    padding: 80px 0;
+    max-width: 1200px;
     margin: 0 auto;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    border-radius: 20px;
+    margin-top: 2rem;
 }
 
-.form-group {
-    margin-bottom: 1.5rem;
+.demo-content {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 3rem;
+    align-items: center;
+    margin-top: 3rem;
 }
 
-.form-group label {
-    display: block;
-    margin-bottom: 0.5rem;
-    font-weight: 500;
-}
-
-.form-group input,
-.form-group textarea {
-    width: 100%;
-    padding: 12px;
-    border: none;
-    border-radius: 8px;
-    background: rgba(255,255,255,0.1);
-    color: white;
-    font-size: 1rem;
-    transition: all 0.3s ease;
-}
-
-.form-group input::placeholder,
-.form-group textarea::placeholder {
-    color: rgba(255,255,255,0.7);
-}
-
-.form-group input:focus,
-.form-group textarea:focus {
-    outline: none;
-    background: rgba(255,255,255,0.2);
-    transform: scale(1.02);
-}
-
-.submit-btn {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    color: white;
-    padding: 12px 30px;
-    border: none;
-    border-radius: 25px;
-    cursor: pointer;
-    font-size: 1rem;
+.demo-text h3 {
+    color: #333;
+    font-size: 1.8rem;
     font-weight: bold;
-    transition: all 0.3s ease;
-    width: 100%;
+    line-height: 1.4;
 }
 
-.submit-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
+.demo-circles {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.circle-item {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    overflow: hidden;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+    border: 3px solid #fff;
+}
+
+.circle-item:hover {
+    transform: translateY(-8px) scale(1.05);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+}
+
+.circle-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.circle-item:hover .circle-img {
+    transform: scale(1.1);
+}
+
+/* Popup Styles */
+.popup-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+    backdrop-filter: blur(5px);
+}
+
+.popup-content {
+    position: relative;
+    background: white;
+    border-radius: 20px;
+    padding: 1rem;
+    max-width: 90vw;
+    max-height: 90vh;
+    box-shadow: 0 25px 50px rgba(0,0,0,0.3);
+    animation: popupFadeIn 0.3s ease;
+}
+
+.close-btn {
+    position: absolute;
+    top: -10px;
+    right: 10px;
+    font-size: 2rem;
+    color: #666;
+    cursor: pointer;
+    background: white;
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+}
+
+.close-btn:hover {
+    color: #333;
+    transform: scale(1.1);
+}
+
+.popup-img {
+    width: auto;
+    height: auto;
+    max-width: 350px;
+    max-height: 700px;
+    border-radius: 15px;
+    display: block;
+}
+
+@keyframes popupFadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.8) translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
 }
 
 /* Footer */
@@ -565,7 +633,22 @@ footer p {
         max-width: 250px;
     }
 
-    .cards-grid {
+    .demo-content {
         grid-template-columns: 1fr;
+        text-align: center;
+        gap: 2rem;
     }
-}
+
+    .demo-circles {
+        gap: 1rem;
+    }
+
+    .circle-item {
+        width: 80px;
+        height: 80px;
+    }
+
+    .popup-img {
+        max-width: 280px;
+        max-height: 600px;
+    }
