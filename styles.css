@@ -128,25 +128,50 @@ main {
     animation: fadeInUp 1s ease 0.3s forwards;
 }
 
+.cta-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    opacity: 0;
+    animation: fadeInUp 1s ease 0.6s forwards;
+}
+
 .cta-button {
-    background: rgba(255, 255, 255, 0.2);
-    color: white;
     padding: 15px 30px;
-    border: 2px solid white;
     border-radius: 50px;
     text-decoration: none;
     font-weight: bold;
     transition: all 0.3s ease;
     display: inline-block;
-    opacity: 0;
-    animation: fadeInUp 1s ease 0.6s forwards;
+    min-width: 180px;
+    text-align: center;
 }
 
-.cta-button:hover {
+.cta-button.primary {
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    border: 2px solid white;
+}
+
+.cta-button.primary:hover {
     background: white;
     color: #667eea;
     transform: translateY(-3px);
     box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+.cta-button.secondary {
+    background: transparent;
+    color: white;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+}
+
+.cta-button.secondary:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
 }
 
 /* Sections */
@@ -211,53 +236,58 @@ section {
     line-height: 1.8;
 }
 
-/* About Section */
-.about {
-    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-    border-radius: 20px;
-    margin: 2rem 0;
+/* Features Section */
+.features {
+    padding: 80px 0;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-left: 2rem;
+    padding-right: 2rem;
 }
 
-.about-content {
+.features-content {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 3rem;
+    gap: 4rem;
     align-items: center;
+    margin-top: 3rem;
 }
 
-.about-text h2 {
+.features-text {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+}
+
+.feature-item h3 {
     color: #333;
-    margin-bottom: 1.5rem;
-    font-size: 2.2rem;
+    font-size: 1.4rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    line-height: 1.4;
 }
 
-.about-text p {
+.feature-item p {
     color: #666;
     font-size: 1.1rem;
-    line-height: 1.8;
-    margin-bottom: 1rem;
+    line-height: 1.7;
 }
 
-.about-image {
+.features-image {
     text-align: center;
 }
 
-.placeholder-image {
-    width: 300px;
-    height: 300px;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    font-size: 1.2rem;
-    margin: 0 auto;
+.phone-mockup {
+    max-width: 300px;
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
     transition: transform 0.3s ease;
 }
 
-.placeholder-image:hover {
-    transform: scale(1.05) rotate(5deg);
+.phone-mockup:hover {
+    transform: translateY(-10px);
 }
 
 /* Contact Section */
