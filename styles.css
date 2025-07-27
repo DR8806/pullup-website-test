@@ -218,6 +218,7 @@ section {
     box-shadow: 0 10px 30px rgba(0,0,0,0.1);
     transition: all 0.3s ease;
     border: 1px solid #f0f0f0;
+    text-align: center;
 }
 
 .card:hover {
@@ -225,15 +226,35 @@ section {
     box-shadow: 0 20px 40px rgba(0,0,0,0.15);
 }
 
+.card-icon {
+    margin-bottom: 1.5rem;
+    display: flex;
+    justify-content: center;
+}
+
+.icon-img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.card:hover .icon-img {
+    transform: scale(1.1);
+}
+
 .card h3 {
-    color: #667eea;
+    color: #333;
     margin-bottom: 1rem;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
+    font-weight: bold;
 }
 
 .card p {
     color: #666;
     line-height: 1.8;
+    font-size: 1rem;
 }
 
 /* Features Section */
