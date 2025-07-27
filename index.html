@@ -15,8 +15,8 @@
                 <li><a href="#updates">Updates</a></li>
             </ul>
             <div class="nav-right">
-                <a href="#cornell" class="nav-link">For Cornell</a>
                 <a href="#" class="get-app-btn">Get App</a>
+                <a href="#cornell" class="nav-link">For Cornell</a>
             </div>
         </nav>
     </header>
@@ -28,7 +28,7 @@
                 <div class="hero-image">
                     <img src="images/frontpage.png" alt="Pull Up App Preview" class="frontpage-img">
                 </div>
-                <p>The best college memories are made with friends, classmates, and teammates. Pull Up makes it easy to share invitations with friends in seconds, so showing up and thus making memories is effortless.</p>
+                <p>Connect authentically with your community and build genuine relationships through meaningful interactions</p>
                 <div class="cta-buttons">
                     <a href="#" class="cta-button primary">Get App for Cornell</a>
                     <a href="#features" class="cta-button secondary">View Features</a>
@@ -40,17 +40,17 @@
             <h2 class="section-title">How Pull Up Works</h2>
             <div class="features-content">
                 <div class="features-text">
-                    <div class="feature-item">
-                        <h3>Pull Up RN: Meet up spontaneously.</h3>
+                    <div class="feature-item" id="pullup-rn">
+                        <h3><span class="feature-name">Pull Up RN</span>: Meet up spontaneously.</h3>
                         <p>Invite your friends or meet up at moments notice with a story-like invitation. Good company can never hurt.</p>
                     </div>
-                    <div class="feature-item">
-                        <h3>Pull Up Invitations: Turn meet-up ideas into plans, fast.</h3>
+                    <div class="feature-item" id="pullup-inv">
+                        <h3><span class="feature-name">Pull Up Invitations</span>: Turn meet-up ideas into plans, fast.</h3>
                         <p>Send invites, check who's down, message friends, and adjust or cancel plans.</p>
                     </div>
                 </div>
                 <div class="features-image">
-                    <img src="images/iphone.png" alt="Pull Up App Interface" class="phone-mockup">
+                    <img src="images/iphone.png" alt="Pull Up App Interface" class="phone-mockup" id="feature-phone">
                 </div>
             </div>
         </section>
@@ -193,44 +193,25 @@
         window.addEventListener('scroll', () => {
             const header = document.querySelector('header');
             if (window.scrollY > 100) {
-                header.style.background = 'rgba(102, 126, 234, 0.95)';
+                header.style.background = 'rgba(154, 226, 255, 0.95)';
                 header.style.backdropFilter = 'blur(10px)';
             } else {
-                header.style.background = 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)';
+                header.style.background = 'linear-gradient(135deg, #9ae2ff 0%, #1c4ba9 100%)';
                 header.style.backdropFilter = 'none';
             }
         });
 
-        // Form submission (you can customize this)
-        document.querySelector('.contact-form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert('Thank you for your message! We\'ll get back to you soon.');
-            this.reset();
+        // Interactive feature image switching
+        const featurePhone = document.getElementById('feature-phone');
+        const pullupRn = document.getElementById('pullup-rn');
+        const pullupInv = document.getElementById('pullup-inv');
+
+        pullupRn.addEventListener('mouseenter', () => {
+            featurePhone.src = 'images/iphoneRN.png';
         });
 
-        // Popup functionality
-        function openPopup(popupId) {
-            document.getElementById(popupId).style.display = 'flex';
-            document.body.style.overflow = 'hidden';
-        }
-
-        function closePopup(popupId) {
-            document.getElementById(popupId).style.display = 'none';
-            document.body.style.overflow = 'auto';
-        }
-
-        // Close popup when pressing Escape key
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape') {
-                const popups = document.querySelectorAll('.popup-overlay');
-                popups.forEach(popup => {
-                    if (popup.style.display === 'flex') {
-                        popup.style.display = 'none';
-                    }
-                });
-                document.body.style.overflow = 'auto';
-            }
+        pullupRn.addEventListener('mouseleave', () => {
+            featurePhone.src = 'images/iphone.png';
         });
-    </script>
-</body>
-</html>
+
+        pullupInv.addEventListener('mouseenter', () => {
