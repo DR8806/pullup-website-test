@@ -26,7 +26,7 @@ body {
 
 /* Header */
 header {
-    background: linear-gradient(135deg, #9ae2ff 0%, #1c4ba9 100%);
+    background: #1c4ba9;
     color: white;
     padding: 1rem 0;
     position: fixed;
@@ -164,6 +164,8 @@ main {
     text-align: center;
     position: relative;
     overflow: hidden;
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
 }
 
 .hero::before {
@@ -269,6 +271,12 @@ section {
     margin: 0 auto;
     padding-left: 2rem;
     padding-right: 2rem;
+}
+
+section.hero {
+    max-width: none;
+    padding-left: 0;
+    padding-right: 0;
 }
 
 .section-title {
@@ -619,14 +627,33 @@ footer p {
     }
 }
 
+/* Announcement Banner */
+.announcement-banner {
+    background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+    color: white;
+    text-align: center;
+    padding: 12px 20px;
+    margin: 2rem auto;
+    max-width: 400px;
+    border-radius: 25px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    box-shadow: 0 4px 15px rgba(231, 76, 60, 0.3);
+    animation: fadeInUp 1s ease 0.9s forwards;
+    opacity: 0;
+}
+
+.announcement-banner::before {
+    content: '🎓';
+    margin-right: 8px;
+}
+
 .cta-button.secondary:hover {
     background: rgba(255, 255, 255, 0.1);
     border-color: white;
     transform: translateY(-3px);
     box-shadow: 0 10px 25px rgba(0,0,0,0.1);
 }
-
-/* Mobile Responsiveness */
 @media (max-width: 768px) {
     .nav-links.left {
         display: none;
